@@ -27,7 +27,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 160,
+              height: 190,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
@@ -53,7 +53,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(15, 20, 0, 0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,

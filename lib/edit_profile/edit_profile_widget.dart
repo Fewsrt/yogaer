@@ -84,18 +84,16 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                 ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
-                  child: AuthUserStreamWidget(
-                    child: Container(
-                      width: 90,
-                      height: 90,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.network(
-                        currentUserPhoto,
-                        fit: BoxFit.cover,
-                      ),
+                  child: Container(
+                    width: 90,
+                    height: 90,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.network(
+                      uploadedFileUrl,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

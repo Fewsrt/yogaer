@@ -113,12 +113,6 @@ class _PoseWidgetState extends State<PoseWidget> {
                         },
                       ),
                     ),
-                    Image.network(
-                      'https://picsum.photos/seed/841/600',
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                    ),
                   ],
                 ),
               ),
