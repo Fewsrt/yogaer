@@ -59,12 +59,10 @@ class _OftenWidgetState extends State<OftenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final dataUserCreateData = createDataUserRecordData(
+                      final usersUpdateData = createUsersRecordData(
                         often: 'nomuch',
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -101,12 +99,10 @@ class _OftenWidgetState extends State<OftenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final dataUserCreateData = createDataUserRecordData(
+                      final usersUpdateData = createUsersRecordData(
                         often: '1-2',
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -143,12 +139,10 @@ class _OftenWidgetState extends State<OftenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final dataUserCreateData = createDataUserRecordData(
-                        often: '3-5',
+                      final usersUpdateData = createUsersRecordData(
+                        often: '3-4',
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -185,12 +179,10 @@ class _OftenWidgetState extends State<OftenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final dataUserCreateData = createDataUserRecordData(
+                      final usersUpdateData = createUsersRecordData(
                         often: '6-7',
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(

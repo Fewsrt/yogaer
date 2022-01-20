@@ -7,7 +7,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/users_record.dart';
 import 'schema/course_record.dart';
 import 'schema/pose_history_record.dart';
-import 'schema/data_user_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,7 +16,6 @@ export 'schema/serializers.dart';
 export 'schema/users_record.dart';
 export 'schema/course_record.dart';
 export 'schema/pose_history_record.dart';
-export 'schema/data_user_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Stream<List<UsersRecord>> queryUsersRecord(
@@ -63,21 +61,6 @@ Future<List<PoseHistoryRecord>> queryPoseHistoryRecordOnce(
         bool singleRecord = false}) =>
     queryCollectionOnce(
         PoseHistoryRecord.collection, PoseHistoryRecord.serializer,
-        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
-
-/// Functions to query DataUserRecords (as a Stream and as a Future).
-Stream<List<DataUserRecord>> queryDataUserRecord(
-        {Query Function(Query) queryBuilder,
-        int limit = -1,
-        bool singleRecord = false}) =>
-    queryCollection(DataUserRecord.collection, DataUserRecord.serializer,
-        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
-
-Future<List<DataUserRecord>> queryDataUserRecordOnce(
-        {Query Function(Query) queryBuilder,
-        int limit = -1,
-        bool singleRecord = false}) =>
-    queryCollectionOnce(DataUserRecord.collection, DataUserRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

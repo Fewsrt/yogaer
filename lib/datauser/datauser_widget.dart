@@ -83,7 +83,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Image.network(
-                            'https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
+                            datauserUsersRecord.photoUrl,
                             fit: BoxFit.fitWidth,
                           ),
                         ),
@@ -309,17 +309,14 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final usersUpdateData = createUsersRecordData();
-                      await currentUserReference.update(usersUpdateData);
-
-                      final dataUserCreateData = createDataUserRecordData(
+                      final usersUpdateData = createUsersRecordData(
+                        displayName: nicknameController.text,
+                        photoUrl: uploadedFileUrl,
                         age: int.parse(ageController.text),
-                        height: int.parse(heightController.text),
                         weight: int.parse(weightController.text),
+                        height: int.parse(heightController.text),
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(

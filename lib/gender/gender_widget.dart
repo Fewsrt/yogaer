@@ -58,13 +58,10 @@ class _GenderWidgetState extends State<GenderWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final dataUserCreateData = createDataUserRecordData(
+                      final usersUpdateData = createUsersRecordData(
                         gender: 'male',
-                        user: currentUserReference,
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -101,13 +98,10 @@ class _GenderWidgetState extends State<GenderWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final dataUserCreateData = createDataUserRecordData(
-                        user: currentUserReference,
+                      final usersUpdateData = createUsersRecordData(
                         gender: 'female',
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -144,13 +138,10 @@ class _GenderWidgetState extends State<GenderWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final dataUserCreateData = createDataUserRecordData(
-                        user: currentUserReference,
+                      final usersUpdateData = createUsersRecordData(
                         gender: 'non',
                       );
-                      await DataUserRecord.collection
-                          .doc()
-                          .set(dataUserCreateData);
+                      await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(

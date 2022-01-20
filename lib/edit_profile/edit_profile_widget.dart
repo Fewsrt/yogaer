@@ -29,6 +29,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
   void initState() {
     super.initState();
     textController1 = TextEditingController(text: currentUserDisplayName);
+    textController2 =
+        TextEditingController(text: currentUserDocument?.age.toString());
+    textController3 =
+        TextEditingController(text: currentUserDocument?.weight.toString());
+    textController4 =
+        TextEditingController(text: currentUserDocument?.height.toString());
   }
 
   @override
@@ -203,218 +209,125 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
-            child: StreamBuilder<List<DataUserRecord>>(
-              stream: queryDataUserRecord(
-                singleRecord: true,
-              ),
-              builder: (context, snapshot) {
-                // Customize what your widget looks like when it's loading.
-                if (!snapshot.hasData) {
-                  return Center(
-                    child: SizedBox(
-                      width: 50,
-                      height: 50,
-                      child: SpinKitWanderingCubes(
-                        color: FlutterFlowTheme.primaryColor,
-                        size: 50,
-                      ),
-                    ),
-                  );
-                }
-                List<DataUserRecord> textFieldDataUserRecordList =
-                    snapshot.data;
-                // Return an empty Container when the document does not exist.
-                if (snapshot.data.isEmpty) {
-                  return Container();
-                }
-                final textFieldDataUserRecord =
-                    textFieldDataUserRecordList.isNotEmpty
-                        ? textFieldDataUserRecordList.first
-                        : null;
-                return TextFormField(
-                  controller: textController2 ??= TextEditingController(
-                    text: textFieldDataUserRecord.age.toString(),
-                  ),
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: 'Your Age',
-                    labelStyle: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF95A1AC),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFFDBE2E7),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFFDBE2E7),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding:
-                        EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                  ),
-                  style: FlutterFlowTheme.bodyText1.override(
+            child: AuthUserStreamWidget(
+              child: TextFormField(
+                controller: textController2,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Your Age',
+                  labelStyle: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Lexend Deca',
-                    color: Color(0xFF14181B),
+                    color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
-                );
-              },
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.bodyText1.override(
+                  fontFamily: 'Lexend Deca',
+                  color: Color(0xFF14181B),
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
-            child: StreamBuilder<List<DataUserRecord>>(
-              stream: queryDataUserRecord(
-                singleRecord: true,
-              ),
-              builder: (context, snapshot) {
-                // Customize what your widget looks like when it's loading.
-                if (!snapshot.hasData) {
-                  return Center(
-                    child: SizedBox(
-                      width: 50,
-                      height: 50,
-                      child: SpinKitWanderingCubes(
-                        color: FlutterFlowTheme.primaryColor,
-                        size: 50,
-                      ),
-                    ),
-                  );
-                }
-                List<DataUserRecord> textFieldDataUserRecordList =
-                    snapshot.data;
-                // Return an empty Container when the document does not exist.
-                if (snapshot.data.isEmpty) {
-                  return Container();
-                }
-                final textFieldDataUserRecord =
-                    textFieldDataUserRecordList.isNotEmpty
-                        ? textFieldDataUserRecordList.first
-                        : null;
-                return TextFormField(
-                  controller: textController3 ??= TextEditingController(
-                    text: textFieldDataUserRecord.weight.toString(),
-                  ),
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: 'Your Weight',
-                    labelStyle: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF95A1AC),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFFDBE2E7),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFFDBE2E7),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding:
-                        EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                  ),
-                  style: FlutterFlowTheme.bodyText1.override(
+            child: AuthUserStreamWidget(
+              child: TextFormField(
+                controller: textController3,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Your Weight',
+                  labelStyle: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Lexend Deca',
-                    color: Color(0xFF14181B),
+                    color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
-                );
-              },
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.bodyText1.override(
+                  fontFamily: 'Lexend Deca',
+                  color: Color(0xFF14181B),
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
-            child: StreamBuilder<List<DataUserRecord>>(
-              stream: queryDataUserRecord(
-                singleRecord: true,
-              ),
-              builder: (context, snapshot) {
-                // Customize what your widget looks like when it's loading.
-                if (!snapshot.hasData) {
-                  return Center(
-                    child: SizedBox(
-                      width: 50,
-                      height: 50,
-                      child: SpinKitWanderingCubes(
-                        color: FlutterFlowTheme.primaryColor,
-                        size: 50,
-                      ),
-                    ),
-                  );
-                }
-                List<DataUserRecord> textFieldDataUserRecordList =
-                    snapshot.data;
-                // Return an empty Container when the document does not exist.
-                if (snapshot.data.isEmpty) {
-                  return Container();
-                }
-                final textFieldDataUserRecord =
-                    textFieldDataUserRecordList.isNotEmpty
-                        ? textFieldDataUserRecordList.first
-                        : null;
-                return TextFormField(
-                  controller: textController4 ??= TextEditingController(
-                    text: textFieldDataUserRecord.height.toString(),
-                  ),
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: 'Your Height',
-                    labelStyle: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF95A1AC),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFFDBE2E7),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFFDBE2E7),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding:
-                        EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                  ),
-                  style: FlutterFlowTheme.bodyText1.override(
+            child: AuthUserStreamWidget(
+              child: TextFormField(
+                controller: textController4,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Your Height',
+                  labelStyle: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Lexend Deca',
-                    color: Color(0xFF14181B),
+                    color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
-                );
-              },
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDBE2E7),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.bodyText1.override(
+                  fontFamily: 'Lexend Deca',
+                  color: Color(0xFF14181B),
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
             ),
           ),
           Align(
@@ -426,15 +339,11 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                   final usersUpdateData = createUsersRecordData(
                     displayName: textController1.text,
                     photoUrl: uploadedFileUrl,
+                    age: int.parse(textController2.text),
+                    weight: int.parse(textController3.text),
+                    height: int.parse(textController4.text),
                   );
                   await currentUserReference.update(usersUpdateData);
-
-                  final dataUserCreateData = createDataUserRecordData(
-                    age: int.parse(textController2?.text ?? ''),
-                    height: int.parse(textController4?.text ?? ''),
-                    weight: int.parse(textController4?.text ?? ''),
-                  );
-                  await DataUserRecord.collection.doc().set(dataUserCreateData);
                   Navigator.pop(context);
                 },
                 text: 'Save Changes',
