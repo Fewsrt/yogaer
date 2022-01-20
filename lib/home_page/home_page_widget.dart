@@ -84,6 +84,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                         child: Image.network(
                                           currentUserPhoto,
+                                          fit: BoxFit.fill,
                                         ),
                                       ),
                                     ),
@@ -187,7 +188,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Image.asset(
-                              'assets/images/mcatd_1.png',
+                              'assets/images/10.png',
                             ).image,
                           ),
                           boxShadow: [
@@ -288,7 +289,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Image.asset(
-                              'assets/images/ml88i_4.png',
+                              'assets/images/13.png',
                             ).image,
                           ),
                           boxShadow: [
@@ -416,7 +417,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Image.asset(
-                              'assets/images/mcatd_1.png',
+                              'assets/images/10.png',
                             ).image,
                           ),
                           boxShadow: [
@@ -517,7 +518,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Image.asset(
-                              'assets/images/albfo_3.png',
+                              'assets/images/12.png',
                             ).image,
                           ),
                           boxShadow: [
@@ -618,7 +619,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Image.asset(
-                              'assets/images/9hsjc_2.png',
+                              'assets/images/11.png',
                             ).image,
                           ),
                           boxShadow: [
