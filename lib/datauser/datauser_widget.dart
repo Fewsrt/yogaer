@@ -83,7 +83,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Image.network(
-                            datauserUsersRecord.photoUrl,
+                            uploadedFileUrl,
                             fit: BoxFit.fitWidth,
                           ),
                         ),
@@ -344,6 +344,21 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                       borderRadius: 8,
                     ),
                   ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(15, 125, 15, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(140, 0, 0, 0),
+                      child: Text(
+                        'Step 3 of 3',
+                        style: FlutterFlowTheme.bodyText1,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

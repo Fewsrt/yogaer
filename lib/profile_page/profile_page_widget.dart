@@ -41,7 +41,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
         final profilePageUsersRecord = snapshot.data;
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: Color(0xFFF1F4F8),
+          backgroundColor: FlutterFlowTheme.secondaryColor,
           body: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -269,7 +269,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         24, 0, 0, 0),
                                     child: Text(
-                                      'Reset Password',
+                                      'Change Password',
                                       style:
                                           FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'Lexend Deca',

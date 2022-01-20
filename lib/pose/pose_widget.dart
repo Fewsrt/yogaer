@@ -23,20 +23,19 @@ class _PoseWidgetState extends State<PoseWidget> {
         backgroundColor: FlutterFlowTheme.secondaryColor,
         automaticallyImplyLeading: false,
         title: Text(
-          'ท่าโยคะทั้งหมด',
+          'Pose',
           style: FlutterFlowTheme.title1.override(
-            fontFamily: 'Thsarabun',
+            fontFamily: 'Lexend Deca',
             color: FlutterFlowTheme.darkBG,
             fontSize: 32,
             fontWeight: FontWeight.bold,
-            useGoogleFonts: false,
           ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 2,
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: FlutterFlowTheme.secondaryColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -47,8 +46,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/mcatd_1.png',
                       width: 80,
                       height: 70,
                       fit: BoxFit.cover,
@@ -65,27 +64,10 @@ class _PoseWidgetState extends State<PoseWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                                 child: Text(
-                                  'Moutain Pose',
+                                  'Lotus Pose',
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'Ekkamai',
                                     fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 48, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
                                     fontWeight: FontWeight.bold,
                                     useGoogleFonts: false,
                                   ),
@@ -97,7 +79,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(90, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(88, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,
@@ -121,11 +103,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/9hsjc_2.png',
                       width: 80,
                       height: 70,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
@@ -150,28 +132,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 60, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(78, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(58, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,
@@ -195,8 +160,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/albfo_3.png',
                       width: 80,
                       height: 70,
                       fit: BoxFit.cover,
@@ -224,28 +189,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 48, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(89, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(69, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,
@@ -269,8 +217,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/ml88i_4.png',
                       width: 80,
                       height: 70,
                       fit: BoxFit.cover,
@@ -298,28 +246,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(116, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(98, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,
@@ -343,8 +274,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/x5rbw_5.png',
                       width: 80,
                       height: 70,
                       fit: BoxFit.cover,
@@ -372,28 +303,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 37, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(101, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(81, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,
@@ -417,8 +331,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/34rbv_6.png',
                       width: 80,
                       height: 70,
                       fit: BoxFit.cover,
@@ -446,28 +360,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 48, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(90, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,
@@ -491,8 +388,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/bfy6z_7.png',
                       width: 80,
                       height: 70,
                       fit: BoxFit.cover,
@@ -520,28 +417,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 45, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(94, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(74, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,
@@ -565,8 +445,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/seed/201/600',
+                    Image.asset(
+                      'assets/images/4y87x_8.png',
                       width: 80,
                       height: 70,
                       fit: BoxFit.cover,
@@ -594,28 +474,11 @@ class _PoseWidgetState extends State<PoseWidget> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 35, 0),
-                                child: Text(
-                                  'เบื้องต้น',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Ekkamai',
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(108, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(88, 0, 0, 0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30,

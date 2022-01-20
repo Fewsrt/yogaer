@@ -184,6 +184,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         height: 170,
                         decoration: BoxDecoration(
                           color: Color(0xFFEBF5FB),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image.asset(
+                              'assets/images/mcatd_1.png',
+                            ).image,
+                          ),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 3,
@@ -203,11 +209,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 20, 0, 0),
                                   child: Text(
-                                    'คอร์สโยคะเบื้องต้น',
+                                    'Beginner Tour',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Thsarabun',
                                       color: FlutterFlowTheme.darkBG,
-                                      fontSize: 20,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
                                       useGoogleFonts: false,
                                     ),
                                   ),
@@ -216,7 +223,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 60, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        35, 0, 0, 0),
+                                    child: Text(
+                                      '7 Days',
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Thsarabun',
+                                        color: FlutterFlowTheme.darkBG,
+                                        fontSize: 22,
+                                        useGoogleFonts: false,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 30, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -224,7 +254,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Button',
+                                    text: 'Continue',
                                     options: FFButtonOptions(
                                       width: 130,
                                       height: 40,
@@ -255,6 +285,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         height: 170,
                         decoration: BoxDecoration(
                           color: Color(0xFFEBF5FB),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image.asset(
+                              'assets/images/ml88i_4.png',
+                            ).image,
+                          ),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 3,
@@ -274,11 +310,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 20, 0, 0),
                                   child: Text(
-                                    'คอร์สโยคะเบื้องต้น',
+                                    'Warrior Pose',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Thsarabun',
                                       color: FlutterFlowTheme.darkBG,
-                                      fontSize: 20,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
                                       useGoogleFonts: false,
                                     ),
                                   ),
@@ -287,78 +324,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 60, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Button',
-                                    options: FFButtonOptions(
-                                      width: 130,
-                                      height: 40,
-                                      color: FlutterFlowTheme.primaryColor,
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle2.override(
-                                        fontFamily: 'Overpass',
-                                        color: Colors.white,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        35, 0, 0, 0),
+                                    child: Text(
+                                      '1 min',
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Thsarabun',
+                                        color: FlutterFlowTheme.darkBG,
+                                        fontSize: 22,
+                                        useGoogleFonts: false,
                                       ),
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1,
-                                      ),
-                                      borderRadius: 12,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 8, 0, 8),
-                      child: Container(
-                        width: 250,
-                        height: 170,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFEBF5FB),
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 3,
-                              color: Color(0x64000000),
-                              offset: Offset(0, 2),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 20, 0, 0),
-                                  child: Text(
-                                    'คอร์สโยคะเบื้องต้น',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Thsarabun',
-                                      color: FlutterFlowTheme.darkBG,
-                                      fontSize: 20,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 60, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(15, 30, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -366,7 +355,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Button',
+                                    text: 'Continue',
                                     options: FFButtonOptions(
                                       width: 130,
                                       height: 40,
@@ -424,6 +413,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         height: 170,
                         decoration: BoxDecoration(
                           color: Color(0xFFEBF5FB),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image.asset(
+                              'assets/images/mcatd_1.png',
+                            ).image,
+                          ),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 3,
@@ -443,11 +438,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 20, 0, 0),
                                   child: Text(
-                                    'คอร์สโยคะเบื้องต้น',
+                                    'Beginner Tour',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Thsarabun',
                                       color: FlutterFlowTheme.darkBG,
-                                      fontSize: 20,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
                                       useGoogleFonts: false,
                                     ),
                                   ),
@@ -456,7 +452,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 60, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        35, 0, 0, 0),
+                                    child: Text(
+                                      '7 Days',
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Thsarabun',
+                                        color: FlutterFlowTheme.darkBG,
+                                        fontSize: 22,
+                                        useGoogleFonts: false,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 30, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -464,7 +483,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Button',
+                                    text: 'Choose',
                                     options: FFButtonOptions(
                                       width: 130,
                                       height: 40,
@@ -495,6 +514,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         height: 170,
                         decoration: BoxDecoration(
                           color: Color(0xFFEBF5FB),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image.asset(
+                              'assets/images/albfo_3.png',
+                            ).image,
+                          ),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 3,
@@ -514,11 +539,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 20, 0, 0),
                                   child: Text(
-                                    'คอร์สโยคะเบื้องต้น',
+                                    'Health Care',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Thsarabun',
                                       color: FlutterFlowTheme.darkBG,
-                                      fontSize: 20,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
                                       useGoogleFonts: false,
                                     ),
                                   ),
@@ -527,7 +553,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 60, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        35, 0, 0, 0),
+                                    child: Text(
+                                      '30 Days',
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Thsarabun',
+                                        color: FlutterFlowTheme.darkBG,
+                                        fontSize: 22,
+                                        useGoogleFonts: false,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 30, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -535,7 +584,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Button',
+                                    text: 'Choose',
                                     options: FFButtonOptions(
                                       width: 130,
                                       height: 40,
@@ -566,6 +615,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         height: 170,
                         decoration: BoxDecoration(
                           color: Color(0xFFEBF5FB),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image.asset(
+                              'assets/images/9hsjc_2.png',
+                            ).image,
+                          ),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 3,
@@ -585,11 +640,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 20, 0, 0),
                                   child: Text(
-                                    'คอร์สโยคะเบื้องต้น',
+                                    'Meditation',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Thsarabun',
                                       color: FlutterFlowTheme.darkBG,
-                                      fontSize: 20,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
                                       useGoogleFonts: false,
                                     ),
                                   ),
@@ -598,7 +654,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 60, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        35, 0, 0, 0),
+                                    child: Text(
+                                      '15 Days',
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Thsarabun',
+                                        color: FlutterFlowTheme.darkBG,
+                                        fontSize: 22,
+                                        useGoogleFonts: false,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 30, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -606,7 +685,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Button',
+                                    text: 'Choose',
                                     options: FFButtonOptions(
                                       width: 130,
                                       height: 40,
