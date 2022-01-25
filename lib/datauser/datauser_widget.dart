@@ -189,7 +189,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                   controller: ageController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Your Age',
+                    labelText: 'Your Age (years)',
                     labelStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: Color(0xFF95A1AC),
@@ -221,6 +221,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
+                  keyboardType: TextInputType.number,
                 ),
               ),
               Padding(
@@ -229,7 +230,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                   controller: weightController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Your Weight',
+                    labelText: 'Your Weight (Kg.)',
                     labelStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: Color(0xFF95A1AC),
@@ -261,6 +262,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
+                  keyboardType: TextInputType.number,
                 ),
               ),
               Padding(
@@ -269,7 +271,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                   controller: heightController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Your Height',
+                    labelText: 'Your Height (Cm.)',
                     labelStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: Color(0xFF95A1AC),
@@ -301,6 +303,7 @@ class _DatauserWidgetState extends State<DatauserWidget> {
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
+                  keyboardType: TextInputType.number,
                 ),
               ),
               Align(

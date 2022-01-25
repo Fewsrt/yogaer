@@ -1,3 +1,4 @@
+import '../detect_pose/detect_pose_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -275,8 +276,13 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 24),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('ButtonPrimary pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetectPoseWidget(),
+                    ),
+                  );
                 },
                 text: 'Start',
                 options: FFButtonOptions(

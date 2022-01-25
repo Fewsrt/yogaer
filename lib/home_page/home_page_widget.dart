@@ -669,7 +669,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 20, 0, 0),
                                   child: Text(
-                                    'Meditation',
+                                    'Increase Flexibility',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Thsarabun',
                                       color: FlutterFlowTheme.darkBG,

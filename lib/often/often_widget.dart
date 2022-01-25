@@ -60,7 +60,7 @@ class _OftenWidgetState extends State<OftenWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       final usersUpdateData = createUsersRecordData(
-                        often: 'nomuch',
+                        often: 'notmuch',
                       );
                       await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
@@ -70,7 +70,7 @@ class _OftenWidgetState extends State<OftenWidget> {
                         ),
                       );
                     },
-                    text: 'No Much',
+                    text: 'Not Much',
                     options: FFButtonOptions(
                       width: 250,
                       height: 50,

@@ -326,14 +326,8 @@ class _CourseWidgetState extends State<CourseWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            IncreaseFlexibilityWidget(),
-                                      ),
-                                    );
+                                  onPressed: () {
+                                    print('Button pressed ...');
                                   },
                                   text: 'Choose',
                                   options: FFButtonOptions(
@@ -528,8 +522,14 @@ class _CourseWidgetState extends State<CourseWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            IncreaseFlexibilityWidget(),
+                                      ),
+                                    );
                                   },
                                   text: 'Choose',
                                   options: FFButtonOptions(

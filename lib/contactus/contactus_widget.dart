@@ -1,4 +1,3 @@
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -22,19 +21,6 @@ class _ContactusWidgetState extends State<ContactusWidget> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          buttonSize: 46,
-          icon: Icon(
-            Icons.arrow_back_rounded,
-            color: Color(0xFF95A1AC),
-            size: 24,
-          ),
-          onPressed: () async {
-            Navigator.pop(context);
-          },
-        ),
         title: Text(
           'DEVELOPER',
           style: FlutterFlowTheme.subtitle1.override(
@@ -48,7 +34,7 @@ class _ContactusWidgetState extends State<ContactusWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: Color(0xFFF1F4F8),
+      backgroundColor: FlutterFlowTheme.secondaryColor,
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -395,7 +381,8 @@ class _ContactusWidgetState extends State<ContactusWidget> {
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.asset(
-                                      'assets/images/userAvatar.png',
+                                      'assets/images/S__6258709.jpg',
+                                      fit: BoxFit.fitWidth,
                                     ),
                                   ),
                                 ),
