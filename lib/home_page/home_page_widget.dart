@@ -448,6 +448,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15, 20, 0, 0),
+                                  child: Text(
+                                    'Beginner Tour',
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                      fontFamily: 'Thsarabun',
+                                      color: FlutterFlowTheme.darkBG,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: false,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
@@ -470,25 +489,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                 ],
                               ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 20, 0, 0),
-                                  child: Text(
-                                    'Beginner Tour',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Thsarabun',
-                                      color: FlutterFlowTheme.darkBG,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ),
-                              ],
                             ),
                             Padding(
                               padding:
