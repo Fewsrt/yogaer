@@ -122,7 +122,7 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                       child: AutoSizeText(
-                        'This course is a guide on how to play.',
+                        'This class is designed to reduce stress while also decreasing tension in the neck, shoulders, and upper and lower back to give you a moment to decompress from the event in your day. Suitable for all levels with no props required, this yoga class will leave you with a sense of “lightness.” profession, you can still benefit from this stress-easing praln.',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.subtitle2.override(
                           fontFamily: 'Lexend Deca',
@@ -153,7 +153,7 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Image.asset(
-                              'assets/images/9hsjc_2.png',
+                              'assets/images/war.png',
                               width: 80,
                               height: 70,
                               fit: BoxFit.fill,
@@ -171,7 +171,7 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12, 0, 0, 0),
                                         child: Text(
-                                          'Downward dog',
+                                          'Warrior Pose',
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'Ekkamai',
@@ -192,7 +192,7 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Image.asset(
-                              'assets/images/ml88i_4.png',
+                              'assets/images/triangle.png',
                               width: 80,
                               height: 70,
                               fit: BoxFit.cover,
@@ -210,7 +210,7 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12, 0, 0, 0),
                                         child: Text(
-                                          'Tree Pose',
+                                          'Triangle Pose',
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'Ekkamai',
@@ -231,7 +231,7 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Image.asset(
-                              'assets/images/x5rbw_5.png',
+                              'assets/images/lotus.png',
                               width: 80,
                               height: 70,
                               fit: BoxFit.cover,
@@ -249,7 +249,7 @@ class _HealthCareWidgetState extends State<HealthCareWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12, 0, 0, 0),
                                         child: Text(
-                                          'Bridge Pose',
+                                          'Lotus Pose',
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'Ekkamai',

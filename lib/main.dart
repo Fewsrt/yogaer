@@ -14,6 +14,7 @@ import 'home_page/home_page_widget.dart';
 import 'course/course_widget.dart';
 import 'pose/pose_widget.dart';
 import 'profile_page/profile_page_widget.dart';
+import 'contactus/contactus_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -107,6 +108,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'Course': CourseWidget(),
       'Pose': PoseWidget(),
       'profilePage': ProfilePageWidget(),
+      'contactus': ContactusWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -154,7 +156,15 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.person,
               size: 24,
             ),
-            label: 'Home',
+            label: 'Profile',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.people_outline,
+              size: 24,
+            ),
+            label: 'Developer',
             tooltip: '',
           )
         ],

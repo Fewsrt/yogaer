@@ -62,9 +62,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.asset(
-                      'assets/images/uiLogo_robinColored@3x.png',
-                      width: 210,
-                      height: 50,
+                      'assets/images/logo.png',
+                      width: 230,
+                      height: 70,
                       fit: BoxFit.fitHeight,
                     ),
                   ],

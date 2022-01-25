@@ -6,14 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MeditationWidget extends StatefulWidget {
-  const MeditationWidget({Key key}) : super(key: key);
+class IncreaseFlexibilityWidget extends StatefulWidget {
+  const IncreaseFlexibilityWidget({Key key}) : super(key: key);
 
   @override
-  _MeditationWidgetState createState() => _MeditationWidgetState();
+  _IncreaseFlexibilityWidgetState createState() =>
+      _IncreaseFlexibilityWidgetState();
 }
 
-class _MeditationWidgetState extends State<MeditationWidget> {
+class _IncreaseFlexibilityWidgetState extends State<IncreaseFlexibilityWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -34,7 +35,7 @@ class _MeditationWidgetState extends State<MeditationWidget> {
           ),
         ),
         title: Text(
-          'MEDITATION',
+          'INCREASE FLEXIBILITY',
           style: FlutterFlowTheme.title2.override(
             fontFamily: 'Lexend Deca',
             color: FlutterFlowTheme.darkBG,
@@ -122,7 +123,7 @@ class _MeditationWidgetState extends State<MeditationWidget> {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                       child: AutoSizeText(
-                        'This course is a guide on how to play.',
+                        'Don\'t be in a rush to get through these poses. Many times you can feel several different phases of opening as you stay in a pose for longer. \nFor best results, do your stretches daily. The following poses are intended to give you some options to fit your current level of flexibility.',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.subtitle2.override(
                           fontFamily: 'Lexend Deca',
@@ -192,7 +193,7 @@ class _MeditationWidgetState extends State<MeditationWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Image.asset(
-                              'assets/images/34rbv_6.png',
+                              'assets/images/bridge.png',
                               width: 80,
                               height: 70,
                               fit: BoxFit.cover,
@@ -210,7 +211,7 @@ class _MeditationWidgetState extends State<MeditationWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12, 0, 0, 0),
                                         child: Text(
-                                          'Triangle Pose',
+                                          'Bridge Pose',
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'Ekkamai',

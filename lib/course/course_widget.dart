@@ -3,7 +3,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../health_care/health_care_widget.dart';
-import '../meditation/meditation_widget.dart';
+import '../increase_flexibility/increase_flexibility_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -331,7 +331,7 @@ class _CourseWidgetState extends State<CourseWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            MeditationWidget(),
+                                            IncreaseFlexibilityWidget(),
                                       ),
                                     );
                                   },

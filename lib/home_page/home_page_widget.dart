@@ -1,7 +1,11 @@
 import '../auth/auth_util.dart';
+import '../beginner_tour/beginner_tour_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../health_care/health_care_widget.dart';
+import '../increase_flexibility/increase_flexibility_widget.dart';
+import '../warrior_pose/warrior_pose_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -132,9 +136,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
+                                        10, 4, 0, 0),
                                     child: Text(
-                                      'Your latest updates are below.',
+                                      'Yoga Everyday.',
                                       style:
                                           FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'Lexend Deca',
@@ -252,8 +256,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              BeginnerTourWidget(),
+                                        ),
+                                      );
                                     },
                                     text: 'Continue',
                                     options: FFButtonOptions(
@@ -353,8 +363,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              WarriorPoseWidget(),
+                                        ),
+                                      );
                                     },
                                     text: 'Continue',
                                     options: FFButtonOptions(
@@ -432,25 +448,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 20, 0, 0),
-                                  child: Text(
-                                    'Beginner Tour',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Thsarabun',
-                                      color: FlutterFlowTheme.darkBG,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
@@ -474,6 +471,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ],
                               ),
                             ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15, 20, 0, 0),
+                                  child: Text(
+                                    'Beginner Tour',
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                      fontFamily: 'Thsarabun',
+                                      color: FlutterFlowTheme.darkBG,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: false,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(15, 30, 0, 0),
@@ -481,8 +497,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              BeginnerTourWidget(),
+                                        ),
+                                      );
                                     },
                                     text: 'Choose',
                                     options: FFButtonOptions(
@@ -582,8 +604,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HealthCareWidget(),
+                                        ),
+                                      );
                                     },
                                     text: 'Choose',
                                     options: FFButtonOptions(
@@ -683,8 +711,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              IncreaseFlexibilityWidget(),
+                                        ),
+                                      );
                                     },
                                     text: 'Choose',
                                     options: FFButtonOptions(

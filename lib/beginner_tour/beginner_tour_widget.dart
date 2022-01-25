@@ -122,7 +122,7 @@ class _BeginnerTourWidgetState extends State<BeginnerTourWidget> {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                       child: AutoSizeText(
-                        'This course is a guide on how to play.',
+                        'Yoga is an easy practice for beginners of all ages, shapes, and sizes,and offers endless benefits including better posture and mental focus,as well as improving strength, balance, and flexibility.',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.subtitle2.override(
                           fontFamily: 'Lexend Deca',
@@ -155,7 +155,7 @@ class _BeginnerTourWidgetState extends State<BeginnerTourWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Image.asset(
-                                'assets/images/mcatd_1.png',
+                                'assets/images/seat.png',
                                 width: 80,
                                 height: 70,
                                 fit: BoxFit.cover,
@@ -174,7 +174,7 @@ class _BeginnerTourWidgetState extends State<BeginnerTourWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12, 0, 0, 0),
                                           child: Text(
-                                            'Lotus Pose',
+                                            'Seated Pose',
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
                                               fontFamily: 'Ekkamai',
@@ -235,7 +235,7 @@ class _BeginnerTourWidgetState extends State<BeginnerTourWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Image.asset(
-                                'assets/images/albfo_3.png',
+                                'assets/images/tree.png',
                                 width: 80,
                                 height: 70,
                                 fit: BoxFit.cover,
@@ -254,7 +254,7 @@ class _BeginnerTourWidgetState extends State<BeginnerTourWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12, 0, 0, 0),
                                           child: Text(
-                                            'Warrior Pose',
+                                            'Tree Pose',
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
                                               fontFamily: 'Ekkamai',
