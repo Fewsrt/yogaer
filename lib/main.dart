@@ -1,26 +1,33 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/gestures.dart';
+// import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
+import 'package:camera/camera.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:yogaer/login/login_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+// import 'package:google_fonts/google_fonts.dart';
+// import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'home_page/home_page_widget.dart';
 import 'course/course_widget.dart';
 import 'pose/pose_widget.dart';
 import 'profile_page/profile_page_widget.dart';
 import 'contactus/contactus_widget.dart';
+// import 'detect_pose/detect_pose_widget.dart';
 
+List<CameraDescription> cameras;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
-  runApp(MyApp());
+  try {
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print('Error: $e.code\nError Message: $e.message');
+  }
+  runApp(new MyApp());
 }
 
 class MyApp extends StatefulWidget {
