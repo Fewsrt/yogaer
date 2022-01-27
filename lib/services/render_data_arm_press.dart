@@ -329,7 +329,7 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 50,
+            height: 70,
             width: widget.screenW,
             decoration: BoxDecoration(
               color: correctColor,
