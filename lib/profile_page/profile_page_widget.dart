@@ -8,7 +8,8 @@ import '../login/login_widget.dart';
 import '../resetpassword/resetpassword_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
+
 
 class ProfilePageWidget extends StatefulWidget {
   const ProfilePageWidget({Key key}) : super(key: key);
