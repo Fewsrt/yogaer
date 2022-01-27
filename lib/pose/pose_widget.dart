@@ -483,7 +483,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12, 0, 0, 0),
                                   child: Text(
-                                    'Seated Twist',
+                                    'Seated Pose',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Ekkamai',
                                       fontSize: 18,
