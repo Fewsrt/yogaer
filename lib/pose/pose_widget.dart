@@ -364,7 +364,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(81, 0, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(83, 0, 0, 0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 30,
@@ -498,7 +498,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(74, 0, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(78, 0, 0, 0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 30,
@@ -565,7 +565,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(88, 0, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(86, 0, 0, 0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 30,
