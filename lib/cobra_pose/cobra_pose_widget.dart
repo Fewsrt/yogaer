@@ -1,3 +1,5 @@
+import 'package:yogaer/main.dart';
+
 import '../detect_pose/detection_cobra_pose_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 // import '../flutter_flow/flutter_flow_util.dart';
@@ -175,7 +177,7 @@ class _CobraPoseWidgetState extends State<CobraPoseWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetectionCobraPoseWidget(),
+                            builder: (context) => DetectionCobraPoseWidget(cameras : cameras),
                           ),
                         );
                       },
