@@ -27,7 +27,7 @@ class _CameraAppState extends State<CameraApp> {
       print('No camera is found');
     } else {
       controller = new CameraController(
-        widget.cameras[0],
+        widget.cameras[1],
         ResolutionPreset.high,
       );
       controller.initialize().then((_) {
