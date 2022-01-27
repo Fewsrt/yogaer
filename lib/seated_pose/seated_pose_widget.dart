@@ -1,3 +1,5 @@
+import 'package:yogaer/main.dart';
+
 import '../detect_pose/detection_seated_pose_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 // import '../flutter_flow/flutter_flow_util.dart';
@@ -175,7 +177,7 @@ class _SeatedPoseWidgetState extends State<SeatedPoseWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetectionSeatedPoseWidget(),
+                            builder: (context) => DetectionSeatedPoseWidget(cameras : cameras),
                           ),
                         );
                       },

@@ -1,3 +1,5 @@
+import 'package:yogaer/main.dart';
+
 import '../detect_pose/detection_beginner_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 // import '../flutter_flow/flutter_flow_util.dart';
@@ -298,7 +300,7 @@ class _BeginnerTourWidgetState extends State<BeginnerTourWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetectionBeginnerWidget(),
+                            builder: (context) => DetectionBeginnerWidget(cameras : cameras),
                           ),
                         );
                       },

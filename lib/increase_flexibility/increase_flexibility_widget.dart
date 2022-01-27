@@ -1,3 +1,5 @@
+import 'package:yogaer/main.dart';
+
 import '../detect_pose/detection_increase_flexibility_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 // import '../flutter_flow/flutter_flow_util.dart';
@@ -300,7 +302,7 @@ class _IncreaseFlexibilityWidgetState extends State<IncreaseFlexibilityWidget> {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                DetectionIncreaseFlexibilityWidget(),
+                                DetectionIncreaseFlexibilityWidget(cameras : cameras),
                           ),
                         );
                       },
