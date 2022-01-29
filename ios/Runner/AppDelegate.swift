@@ -7,6 +7,7 @@ typealias FileInfo = (name: String, extension: String)
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
+  private var interpreter: Interpreter
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -15,16 +16,16 @@ typealias FileInfo = (name: String, extension: String)
     
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-    let batteryChannel = FlutterMethodChannel(name: "ondeviceML",
+    let channel = FlutterMethodChannel(name: "ondeviceML",
                                               binaryMessenger: controller.binaryMessenger)
-    batteryChannel.setMethodCallHandler({
-      [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
-      // Note: this method is invoked on the UI thread.
-      guard call.method == "predictData" else {
+    channel.setMethodCallHandler({
+      (call: FlutterMethodCall, result: FlutterResult) -> Void in
+      switch call.method {
+      case "predictData":
+        self.predictData(call: call, result: result)
+      default:
         result(FlutterMethodNotImplemented)
-        return
       }
-      self.predictData(call: call, result: result)
     })
 
     GeneratedPluginRegistrant.register(with: self)
@@ -44,7 +45,6 @@ typealias FileInfo = (name: String, extension: String)
       ofType: modelFile.extension
     ) else {
       print("Failed to load the model file with name: \(modelFile.name).")
-      return nil
     }
     do {
       // Initialize an interpreter with the model.
@@ -56,20 +56,20 @@ typealias FileInfo = (name: String, extension: String)
       // input data preparation...
 
       // Copy the input data to the input `Tensor`.
-      try self.interpreter.copy(inputData, toInputAt: 0)
+      try interpreter.copy(inputData, toInputAt: 0)
 
       // Run inference by invoking the `Interpreter`.
-      try self.interpreter.invoke()
+      try interpreter.invoke()
 
       // Get the output `Tensor`
-      let outputTensor = try self.interpreter.output(at: 0)
+      let outputTensor = try interpreter.output(at: 0)
 
       // Copy output to `Data` to process the inference results.
-      let outputData = [Float](unsafeData: outputTensor.data)
+      let outputData = [Float](unsafeData: outputTensor.data) ?? []
       result(outputData[0])
     } catch let error {
       result(FlutterError.init(code: "invoke", message: "Failed to invoke the interpreter with error: \(error.localizedDescription)", details: nil))
-      return nil
+      
     }
   } else {
     result(FlutterError.init(code: "bad args", message: nil, details: nil))
