@@ -3,6 +3,8 @@ import UIKit
 import Flutter
 import TensorFlowLite
 
+typealias FileInfo = (name: String, extension: String)
+
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
@@ -13,12 +15,12 @@ import TensorFlowLite
     
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-    let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
+    let batteryChannel = FlutterMethodChannel(name: "ondeviceML",
                                               binaryMessenger: controller.binaryMessenger)
     batteryChannel.setMethodCallHandler({
       [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // Note: this method is invoked on the UI thread.
-      guard call.method == "getBatteryLevel" else {
+      guard call.method == "predictData" else {
         result(FlutterMethodNotImplemented)
         return
       }
@@ -35,11 +37,11 @@ import TensorFlowLite
     let inputData = args["arg"] as? [Double] {
     // use number and times as required, for example....
     /// Model files
-    let modelFile = FileInfo(name: model, ext: "tflite")
+    let modelFile = FileInfo(name: model, extension: "tflite")
     // Construct the path to the model file.
     guard let modelPath = Bundle.main.path(
       forResource: modelFile.name,
-      ofType: modelFile.ext
+      ofType: modelFile.extension
     ) else {
       print("Failed to load the model file with name: \(modelFile.name).")
       return nil
@@ -63,13 +65,12 @@ import TensorFlowLite
       let outputTensor = try self.interpreter.output(at: 0)
 
       // Copy output to `Data` to process the inference results.
-      let outputData = Float(unsafeData: outputTensor.data)
-      result(outputData)
+      let outputData = [Float](unsafeData: outputTensor.data)
+      result(outputData[0])
     } catch let error {
       result(FlutterError.init(code: "invoke", message: "Failed to invoke the interpreter with error: \(error.localizedDescription)", details: nil))
       return nil
     }
-    result(number * times) // or your syntax
   } else {
     result(FlutterError.init(code: "bad args", message: nil, details: nil))
   }
