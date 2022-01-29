@@ -22,15 +22,14 @@ import TensorFlowLite
         result(FlutterMethodNotImplemented)
         return
       }
-      self?.predictData(call: call, result: result)
+      self.predictData(call: call, result: result)
     })
 
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
-}
 
-private func predictData(call: FlutterMethodCall, result: FlutterResult) {
+  private func predictData(call: FlutterMethodCall, result: FlutterResult) {
   if let args = call.arguments as? Dictionary<String, Any>,
     let model = args["model"] as? String,
     let inputData = args["arg"] as? [Double] {
@@ -75,3 +74,7 @@ private func predictData(call: FlutterMethodCall, result: FlutterResult) {
     result(FlutterError.init(code: "bad args", message: nil, details: nil))
   }
 }
+
+}
+
+
