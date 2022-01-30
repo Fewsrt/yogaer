@@ -1,4 +1,5 @@
 import 'package:yogaer/flutter_flow/flutter_flow_theme.dart';
+import 'package:yogaer/services/render_data_arm_press.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 
-import 'package:yogaer/camera.dart';
-import 'package:yogaer/bndbox.dart';
+import 'package:yogaer/services/camera.dart';
 
 class DetectionWarriorPoseWidget extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -22,7 +22,7 @@ class DetectionWarriorPoseWidget extends StatefulWidget {
 class _DetectionWarriorPoseWidgetState
     extends State<DetectionWarriorPoseWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  List<dynamic> _recognitions;
+  List<dynamic> _data;
   int _imageHeight = 0;
   int _imageWidth = 0;
   int x = 1;
@@ -39,7 +39,7 @@ class _DetectionWarriorPoseWidgetState
       return;
     }
     setState(() {
-      _recognitions = data;
+      _data = data;
       _imageHeight = imageHeight;
       _imageWidth = imageWidth;
     });
@@ -62,17 +62,16 @@ class _DetectionWarriorPoseWidgetState
       ),
       body: Stack(
         children: <Widget>[
-          Camera(
+          CameraApp(
             cameras: widget.cameras,
             setRecognitions: _setRecognitions,
           ),
-          BndBox(
-            results: _recognitions == null ? [] : _recognitions,
+          RenderDataArmPress(
+            data: _data == null ? [] : _data,
             previewH: max(_imageHeight, _imageWidth),
             previewW: min(_imageHeight, _imageWidth),
             screenH: screen.height,
             screenW: screen.width,
-            customModel: "Virbhadrasana",
           ),
         ],
       ),
