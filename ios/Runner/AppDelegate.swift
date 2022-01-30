@@ -7,7 +7,6 @@ typealias FileInfo = (name: String, extension: String)
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-  private var interpreter: Interpreter
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -65,8 +64,11 @@ typealias FileInfo = (name: String, extension: String)
       let outputTensor = try interpreter.output(at: 0)
 
       // Copy output to `Data` to process the inference results.
-      let outputData = [Float](unsafeData: outputTensor.data) ?? []
-      result(outputData[0])
+      let outputSize = outputTensor.shape.dimensions.reduce(1, {x, y in x * y})
+      let outputData = UnsafeMutableBufferPointer<Float32>.allocate(capacity: outputSize)
+      outputTensor.data.copyBytes(to: outputData)
+      print(outputData)
+      result(outputData)
     } catch let error {
       result(FlutterError.init(code: "invoke", message: "Failed to invoke the interpreter with error: \(error.localizedDescription)", details: nil))
       
