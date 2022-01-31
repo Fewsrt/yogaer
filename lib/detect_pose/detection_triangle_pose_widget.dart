@@ -1,5 +1,4 @@
 import 'package:yogaer/flutter_flow/flutter_flow_theme.dart';
-import 'package:yogaer/services/render_data_arm_press.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 
-import 'package:yogaer/services/camera.dart';
+import 'package:yogaer/bndbox.dart';
+import 'package:yogaer/camera.dart';
 
 class DetectionTrianglePoseWidget extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -22,7 +22,7 @@ class DetectionTrianglePoseWidget extends StatefulWidget {
 class _DetectionTrianglePoseWidgetState
     extends State<DetectionTrianglePoseWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  List<dynamic> _data;
+  List<dynamic> _recognitions;
   int _imageHeight = 0;
   int _imageWidth = 0;
   int x = 1;
@@ -39,7 +39,7 @@ class _DetectionTrianglePoseWidgetState
       return;
     }
     setState(() {
-      _data = data;
+      _recognitions = data;
       _imageHeight = imageHeight;
       _imageWidth = imageWidth;
     });
@@ -62,16 +62,17 @@ class _DetectionTrianglePoseWidgetState
       ),
       body: Stack(
         children: <Widget>[
-          CameraApp(
+          Camera(
             cameras: widget.cameras,
             setRecognitions: _setRecognitions,
           ),
-          RenderDataArmPress(
-            data: _data == null ? [] : _data,
+          BndBox(
+            results: _recognitions == null ? [] : _recognitions,
             previewH: max(_imageHeight, _imageWidth),
             previewW: min(_imageHeight, _imageWidth),
             screenH: screen.height,
             screenW: screen.width,
+            customModel: "Trikonasana",
           ),
         ],
       ),

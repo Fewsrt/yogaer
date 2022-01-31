@@ -78,6 +78,12 @@
 @import tflite;
 #endif
 
+#if __has_include(<tflite_flutter/TfliteFlutterPlugin.h>)
+#import <tflite_flutter/TfliteFlutterPlugin.h>
+#else
+@import tflite_flutter;
+#endif
+
 #if __has_include(<url_launcher/FLTURLLauncherPlugin.h>)
 #import <url_launcher/FLTURLLauncherPlugin.h>
 #else
@@ -99,6 +105,7 @@
   [SignInWithApplePlugin registerWithRegistrar:[registry registrarForPlugin:@"SignInWithApplePlugin"]];
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
   [TflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"TflitePlugin"]];
+  [TfliteFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"TfliteFlutterPlugin"]];
   [FLTURLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTURLLauncherPlugin"]];
 }
 
