@@ -56,7 +56,7 @@ class _DetectionTrianglePoseWidgetState
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: Text('Triagle Pose'),
+        title: Text('Triangle Pose'),
         backgroundColor: FlutterFlowTheme.primaryColor,
         elevation: 0,
       ),

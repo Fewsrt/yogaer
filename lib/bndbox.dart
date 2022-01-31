@@ -33,18 +33,32 @@ class _BndBoxState extends State<BndBox> {
   double _percent = 0;
   double _counter = 0;
   Timer _timer;
-  int _start = 12000; // 120 sec
+  int _start; // 12 sec
+  Interpreter _interpreter;
 
   @override
   void initState() {
     super.initState();
     _counter = 0;
+    _start = 12000;
+    loadModel(interpreter: _interpreter);
   }
 
   void resetCounter() {
     setState(() {
       _counter = 0;
     });
+  }
+
+  void loadModel({Interpreter interpreter}) async {
+    try {
+      _interpreter = interpreter ??
+          await Interpreter.fromAsset(
+            "models/" + widget.customModel + ".tflite",
+          );
+    } catch (e) {
+      print("Error while creating interpreter: $e");
+    }
   }
 
   @override
@@ -153,11 +167,13 @@ class _BndBoxState extends State<BndBox> {
   }
 
   Future<void> _getPrediction(List<double> poses) async {
-    final interpreter =
-        await Interpreter.fromAsset("models/" + widget.customModel + ".tflite");
+    if (_interpreter == null) {
+      print("Interpreter not initialized");
+      return null;
+    }
     var output = List.filled(1, 0).reshape([1, 1]);
 
-    interpreter.run(poses, output);
+    _interpreter.run(poses, output);
 
     final double result = output[0][0];
     print(output[0][0]);
@@ -168,9 +184,11 @@ class _BndBoxState extends State<BndBox> {
     }
     _label =
         result < 0.5 ? "Wrong Pose" : (result * 100).toStringAsFixed(0) + "%";
-    Future.delayed(const Duration(milliseconds: 500), () {
-      updateCounter(_percent);
-    });
+    if (_start != 0) {
+      Future.delayed(const Duration(milliseconds: 100), () {
+        updateCounter(_percent);
+      });
+    }
 
     print("Final Label: " + result.toString());
   }
@@ -194,15 +212,14 @@ class _BndBoxState extends State<BndBox> {
         oneMs,
         (Timer timer) {
           if (_start == 0) {
-            setState(() {
-              timer.cancel();
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => YogaSuccessWidget(),
-                ),
-              );
-            });
+            stopTimer();
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => YogaSuccessWidget(),
+              ),
+              (Route<dynamic> route) => false,
+            );
           } else {
             _start--;
             _counter = 1.0 - (_start / 12000);
