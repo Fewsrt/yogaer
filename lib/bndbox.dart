@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:yogaer/yoga_success/yoga_success_widget.dart';
 
 class BndBox extends StatefulWidget {
   final List<dynamic> results;
@@ -29,6 +32,8 @@ class _BndBoxState extends State<BndBox> {
   String _label = 'Wrong Pose';
   double _percent = 0;
   double _counter = 0;
+  Timer _timer;
+  int _start = 12000; // 120 sec
 
   @override
   void initState() {
@@ -133,7 +138,8 @@ class _BndBoxState extends State<BndBox> {
               animationDuration: 500,
               animateFromLastPercent: true,
               percent: _counter,
-              center: Text("${(_counter * 100).toStringAsFixed(1)} %"),
+              center: Text(
+                  "${(_start / 1000).toStringAsFixed(1)} second left ${(_counter * 100).toStringAsFixed(1)} %"),
               linearStrokeCap: LinearStrokeCap.roundAll,
               progressColor: Colors.green,
             ),
@@ -162,15 +168,52 @@ class _BndBoxState extends State<BndBox> {
     }
     _label =
         result < 0.5 ? "Wrong Pose" : (result * 100).toStringAsFixed(0) + "%";
-    updateCounter(_percent);
+    Future.delayed(const Duration(milliseconds: 500), () {
+      updateCounter(_percent);
+    });
 
     print("Final Label: " + result.toString());
   }
 
   void updateCounter(perc) {
     if (perc > 0.5) {
-      (_counter += perc / 100) >= 1 ? _counter = 1.0 : _counter += perc / 100;
+      startTimer();
+      print("O startTimer");
+    } else {
+      stopTimer();
+      print("X stopTimer");
     }
     print("Counter: " + _counter.toString());
+  }
+
+  void startTimer() {
+    const oneMs = Duration(milliseconds: 1);
+
+    if (_timer == null) {
+      _timer = Timer.periodic(
+        oneMs,
+        (Timer timer) {
+          if (_start == 0) {
+            setState(() {
+              timer.cancel();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => YogaSuccessWidget(),
+                ),
+              );
+            });
+          } else {
+            _start--;
+            _counter = 1.0 - (_start / 12000);
+          }
+        },
+      );
+    }
+  }
+
+  void stopTimer() {
+    _timer?.cancel();
+    _timer = null;
   }
 }
