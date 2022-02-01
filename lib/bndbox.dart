@@ -194,7 +194,7 @@ class _BndBoxState extends State<BndBox> {
   }
 
   void updateCounter(perc) {
-    if (perc > 0.5) {
+    if (perc > 0.75) {
       startTimer();
       print("O startTimer");
     } else {
