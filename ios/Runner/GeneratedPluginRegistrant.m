@@ -84,6 +84,12 @@
 @import tflite_flutter;
 #endif
 
+#if __has_include(<tflite_flutter_helper/TfliteFlutterHelperPlugin.h>)
+#import <tflite_flutter_helper/TfliteFlutterHelperPlugin.h>
+#else
+@import tflite_flutter_helper;
+#endif
+
 #if __has_include(<url_launcher/FLTURLLauncherPlugin.h>)
 #import <url_launcher/FLTURLLauncherPlugin.h>
 #else
@@ -106,6 +112,7 @@
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
   [TflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"TflitePlugin"]];
   [TfliteFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"TfliteFlutterPlugin"]];
+  [TfliteFlutterHelperPlugin registerWithRegistrar:[registry registrarForPlugin:@"TfliteFlutterHelperPlugin"]];
   [FLTURLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTURLLauncherPlugin"]];
 }
 

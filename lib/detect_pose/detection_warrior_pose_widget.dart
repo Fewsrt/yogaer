@@ -72,7 +72,7 @@ class _DetectionWarriorPoseWidgetState
             previewW: min(_imageHeight, _imageWidth),
             screenH: screen.height,
             screenW: screen.width,
-            customModel: "Virbhadrasana",
+            customModel: "pose_classifier",
           ),
         ],
       ),

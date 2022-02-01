@@ -1,9 +1,11 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 import 'package:yogaer/yoga_success/yoga_success_widget.dart';
 
 class BndBox extends StatefulWidget {
@@ -35,6 +37,18 @@ class _BndBoxState extends State<BndBox> {
   Timer _timer;
   int _start; // 12 sec
   Interpreter _interpreter;
+  List<String> labels;
+  String labelOutput = "test";
+
+  /// Labels file loaded as list
+  List<String> _labels;
+  static const String LABEL_FILE_NAME = "pose_labels.txt";
+
+  /// Shapes of output tensors
+  List<List<int>> _outputShapes;
+
+  /// Types of output tensors
+  List<TfLiteType> _outputTypes;
 
   @override
   void initState() {
@@ -42,6 +56,7 @@ class _BndBoxState extends State<BndBox> {
     _counter = 0;
     _start = 12000;
     loadModel(interpreter: _interpreter);
+    loadLabels(labels: labels);
   }
 
   void resetCounter() {
@@ -56,8 +71,25 @@ class _BndBoxState extends State<BndBox> {
           await Interpreter.fromAsset(
             "models/" + widget.customModel + ".tflite",
           );
+      var outputTensors = _interpreter.getOutputTensors();
+      _outputShapes = [];
+      _outputTypes = [];
+      outputTensors.forEach((tensor) {
+        _outputShapes.add(tensor.shape);
+        _outputTypes.add(tensor.type);
+      });
     } catch (e) {
       print("Error while creating interpreter: $e");
+    }
+  }
+
+  /// Loads labels from assets
+  void loadLabels({List<String> labels}) async {
+    try {
+      _labels = labels ??
+          await FileUtil.loadLabels("assets/models/" + LABEL_FILE_NAME);
+    } catch (e) {
+      print("Error while loading labels: $e");
     }
   }
 
@@ -146,17 +178,7 @@ class _BndBoxState extends State<BndBox> {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(25.0, 0, 25.0, 25.0),
-            child: LinearPercentIndicator(
-              animation: true,
-              lineHeight: 20.0,
-              animationDuration: 500,
-              animateFromLastPercent: true,
-              percent: _counter,
-              center: Text(
-                  "${(_start / 1000).toStringAsFixed(1)} second left ${(_counter * 100).toStringAsFixed(1)} %"),
-              linearStrokeCap: LinearStrokeCap.roundAll,
-              progressColor: Colors.green,
-            ),
+            child: Text(labelOutput.toString()),
           ),
         ],
       ),
@@ -171,12 +193,20 @@ class _BndBoxState extends State<BndBox> {
       print("Interpreter not initialized");
       return null;
     }
-    var output = List.filled(1, 0).reshape([1, 1]);
 
-    _interpreter.run(poses, output);
+    // var outputTensor = List<Float>(_outputShapes[1]);
+    TensorBuffer outputLocations = TensorBufferFloat(_outputShapes[0]);
+    // TensorBuffer outputClasses = TensorBufferFloat(_outputShapes[1]);
 
-    final double result = output[0][0];
-    print(output[0][0]);
+    // var outputTensor = List.filled(1 * 2, 0).reshape([1, 2]);
+    Map<int, Object> outputs = {
+      0: outputLocations.buffer,
+    };
+
+    _interpreter.run(poses, outputs);
+
+    final double result = 0.0;
+    print(result);
 
     if (result <= 1) {
       _percent = 0;
@@ -184,11 +214,11 @@ class _BndBoxState extends State<BndBox> {
     }
     _label =
         result < 0.5 ? "Wrong Pose" : (result * 100).toStringAsFixed(0) + "%";
-    if (_start != 0) {
-      Future.delayed(const Duration(milliseconds: 100), () {
-        updateCounter(_percent);
-      });
-    }
+    // if (_start != 0) {
+    //   Future.delayed(const Duration(milliseconds: 100), () {
+    //     updateCounter(_percent);
+    //   });
+    // }
 
     print("Final Label: " + result.toString());
   }
